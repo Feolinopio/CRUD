@@ -1,5 +1,3 @@
-from backend.producto import consultarProducto
+from frontend.producto import mostrarMenuDeProductos
 
-producto = consultarProducto("Star Wars")
-
-print(producto)
+mostrarMenuDeProductos()
