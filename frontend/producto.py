@@ -12,20 +12,21 @@ def listarProductos():
 
 
 def consultarProducto():
-    nombre = input("Ingrese el nombre del producto: ")
+    nombre = input(
+        "Ingrese el nombre del producto (tenga en cuenta las mayúsculas): ")
 
     producto = Producto.consultarProducto(nombre)
 
     if producto == None:
-        print(f"Producto con nombre {nombre} no existe")
+        print(f"Producto con nombre {nombre} no existe, intenta nuevamente")
         return
 
-    print(producto)
+    print(tabulate([producto[1:]], headers=headers, tablefmt="rounded_grid"))
 
 
 def mostrarMenuDeProductos():
     separador = "------------------------"
-    bienvenida = "Antonio"
+    bienvenida = "Bienvenido a RR Tech 🤓"
     opciones = {
         "1": listarProductos,
         "2": consultarProducto,
